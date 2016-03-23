@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.billchan86.sample.logger;
+package com.example.android.common.logger;
 
 import android.app.Activity;
 import android.content.Context;

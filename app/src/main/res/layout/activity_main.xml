@@ -50,7 +50,7 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
     <fragment
-        android:name="io.github.billchan86.sample.logger.LogFragment"
+        android:name="com.example.android.common.logger.LogFragment"
         android:layout_weight="1"
         android:id="@+id/log_fragment"
         android:layout_width="match_parent"

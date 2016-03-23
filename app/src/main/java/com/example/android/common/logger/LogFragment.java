@@ -29,7 +29,7 @@
  * limitations under the License.
  */
 
-package io.github.billchan86.sample.logger;
+package com.example.android.common.logger;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
