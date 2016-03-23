@@ -9,15 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.android.common.logger.Log;
+import com.example.android.common.logger.LogFragment;
+import com.example.android.common.logger.LogWrapper;
+import com.example.android.common.logger.MessageOnlyLogFilter;
+
 import java.lang.ref.WeakReference;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 
 import io.github.billchan86.lib.network.NetworkClient;
-import io.github.billchan86.sample.logger.Log;
-import io.github.billchan86.sample.logger.LogFragment;
-import io.github.billchan86.sample.logger.LogWrapper;
-import io.github.billchan86.sample.logger.MessageOnlyLogFilter;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
