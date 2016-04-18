@@ -11,6 +11,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class NetworkClient {
@@ -129,8 +130,8 @@ public class NetworkClient {
 
                     //当调用Thread.interrupt()进行中断线程时，上面的Selector的阻塞操作会马上返回，在此处立马检查线程状态
                     if (Thread.interrupted()) {
-                        throw new InterruptedException(String.format("Thread[%d] has been Interrupted.",
-                                Thread.currentThread().getId()));
+                        throw new InterruptedException(String.format(Locale.getDefault(),
+                                "Thread[%d] has been Interrupted.", Thread.currentThread().getId()));
                     }
 
                     Iterator<SelectionKey> it = mSelector.selectedKeys().iterator();
@@ -196,7 +197,8 @@ public class NetworkClient {
             mReceiveBuffer.clear();
             int count = socketChannel.read(mReceiveBuffer);
             if (count <= 0) {
-                throw new IOException(String.format("Thread[%d] read error:%d", Thread.currentThread().getId(), count));
+                throw new IOException(String.format(Locale.getDefault(),
+                        "Thread[%d] read error:%d", Thread.currentThread().getId(), count));
             } else {
                 byte[] data = new byte[count];
                 System.arraycopy(mReceiveBuffer.array(), 0, data, 0, count);
